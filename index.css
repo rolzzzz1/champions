@@ -1,4 +1,81 @@
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1924;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  padding-top: 50px;
+}
+
+@font-face {
+  src: url("Inter-Regular.ttf");
+  font-family: Inter-Regular;
+}
+
+@font-face {
+  src: url("JosefinSans-Bold.ttf");
+  font-family: JosefinSans-Bold;
+}
+
+@font-face {
+  src: url("JosefinSans-Regular.ttf");
+  font-family: JosefinSans-Regular;
+}
+
+#fred {
+  width: 90px;
+  height: 90px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: JosefinSans-Bold;
+  font-size: 25px;
+}
+
+h3 {
+  color: #ffffff;
+  font-family: JosefinSans-Bold;
+  font-size: 20px;
+}
+
+#input_endorsement {
+  resize: none;
+  background-color: #444059;
+  color: #8f8f8f;
+  font-size: 15px;
+  font-family: Inter-Regular;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
+  width: 325px;
+  background-color: #28a9f1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: JosefinSans-Bold;
+  font-size: 22px;
+}
+
+#show_endorsement {
+  background-color: #ffffff;
+  color: #1b1924;
+  width: 325px;
+  padding: 5px;
+  font-size: 12px;
+  font-family: Inter-Regular;
+  margin-bottom: 8px;
 }
