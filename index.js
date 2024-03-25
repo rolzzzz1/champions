@@ -29,7 +29,9 @@ onValue(championsDB, function (snapshot) {
 
   for (let i = 0; i < msgArray.length; i++) {
     let currentMsg = msgArray[i];
-    console.log(currentMsg);
+    console.log(currentMsg.to);
+    console.log(currentMsg.from);
+    console.log(currentMsg.msg);
     // appendBookToBooksListEl(currentBook);
   }
 });
