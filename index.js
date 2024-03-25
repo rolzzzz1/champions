@@ -40,7 +40,7 @@ publishBtn.addEventListener("click", function () {
                     `;
   endorseContainer.append(newEl);
 
-  //   push(championsDB, 1);
+  push(championsDB, 1);
 
   inputEndorsement.value = "";
   from.value = "";
