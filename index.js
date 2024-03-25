@@ -26,6 +26,7 @@ onValue(championsDB, function (snapshot) {
   console.log(msgArray);
   //   let booksArray = Object.values(snapshot.val());
   //   clearBooksListEl();
+  endorseContainer.innerHTML = "";
 
   for (let i = 0; i < msgArray.length; i++) {
     let currentMsg = msgArray[i];
