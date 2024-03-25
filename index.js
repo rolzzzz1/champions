@@ -33,9 +33,9 @@ onValue(championsDB, function (snapshot) {
     console.log(currentMsg.from);
     console.log(currentMsg.msg);
     const msg = `
-    <p><strong>To ${toVal}</strong></p> 
-    ${input} 
-    <p><strong>From ${fromVal}</strong></p>
+    <p><strong>To ${currentMsg.to}</strong></p> 
+    ${currentMsg.msg} 
+    <p><strong>From ${currentMsg.from}</strong></p>
   `;
 
     let newEl = document.createElement("div");
