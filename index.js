@@ -41,7 +41,13 @@ publishBtn.addEventListener("click", function () {
   newEl.innerHTML = msg;
   endorseContainer.append(newEl);
 
-  push(championsDB, msg);
+  let obj = {
+    from: `${fromVal}`,
+    to: `${toVal}`,
+    msg: `${input}`,
+  };
+
+  push(championsDB, obj);
 
   inputEndorsement.value = "";
   from.value = "";
