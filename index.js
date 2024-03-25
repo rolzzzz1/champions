@@ -20,6 +20,18 @@ const championsDB = ref(database, "champions"); // reference named movies
 // How to push value into database reference
 // push(moviesInDB, inputValue);
 
+onValue(championsDB, function (snapshot) {
+  console.log(snapshot.value);
+  //   let booksArray = Object.values(snapshot.val());
+  //   clearBooksListEl();
+  //   // Challenge: Write a for loop where you console log each book.
+  //   for (let i = 0; i < booksArray.length; i++) {
+  //     let currentBook = booksArray[i];
+  //     // Challenge: Use the appendBookToBooksListEl() function to append book instead of console logging
+  //     appendBookToBooksListEl(currentBook);
+  //   }
+});
+
 let publishBtn = document.getElementById("publish_btn");
 let inputEndorsement = document.getElementById("input_endorsement");
 let endorseContainer = document.getElementById("endorse_container");
