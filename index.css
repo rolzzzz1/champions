@@ -57,11 +57,12 @@ h3 {
   font-family: Inter-Regular;
   border-radius: 8px;
   padding: 10px;
+  border: none;
 }
 
 button {
   margin-top: 10px;
-  width: 325px;
+  width: 324px;
   background-color: #28a9f1;
   padding: 10px 20px;
   border-radius: 8px;
@@ -74,8 +75,36 @@ button {
   background-color: #ffffff;
   color: #1b1924;
   width: 325px;
-  padding: 5px;
+  padding: 10px;
   font-size: 12px;
   font-family: Inter-Regular;
   margin-bottom: 8px;
 }
+
+input {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #444059;
+  color: #8f8f8f;
+  font-size: 15px;
+  font-family: Inter-Regular;
+  border-radius: 8px;
+  width: 118px;
+  border: none;
+  text-align: center;
+}
+
+p {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* #endorse_container {
+  background-color: #ffffff;
+  color: #1b1924;
+  width: 325px;
+  padding: 5px;
+  font-size: 12px;
+  font-family: Inter-Regular;
+  margin-bottom: 8px;
+} */
