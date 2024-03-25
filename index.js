@@ -32,6 +32,16 @@ onValue(championsDB, function (snapshot) {
     console.log(currentMsg.to);
     console.log(currentMsg.from);
     console.log(currentMsg.msg);
+    const msg = `
+    <p><strong>To ${toVal}</strong></p> 
+    ${input} 
+    <p><strong>From ${fromVal}</strong></p>
+  `;
+
+    let newEl = document.createElement("div");
+    newEl.setAttribute("id", "show_endorsement");
+    newEl.innerHTML = msg;
+    endorseContainer.append(newEl);
     // appendBookToBooksListEl(currentBook);
   }
 });
