@@ -30,17 +30,18 @@ publishBtn.addEventListener("click", function () {
   const input = inputEndorsement.value;
   const fromVal = from.value;
   const toVal = to.value;
+  const msg = `
+  <p><strong>To ${toVal}</strong></p> 
+  ${input} 
+  <p><strong>From ${fromVal}</strong></p>
+`;
 
   let newEl = document.createElement("div");
   newEl.setAttribute("id", "show_endorsement");
-  newEl.innerHTML = `
-                        <p><strong>To ${toVal}</strong></p> 
-                        ${input} 
-                        <p><strong>From ${fromVal}</strong></p>
-                    `;
+  newEl.innerHTML = msg;
   endorseContainer.append(newEl);
 
-  push(championsDB, 1);
+  push(championsDB, msg);
 
   inputEndorsement.value = "";
   from.value = "";
