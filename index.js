@@ -22,7 +22,7 @@ const championsDB = ref(database, "champions"); // reference named movies
 // push(moviesInDB, inputValue);
 
 onValue(championsDB, function (snapshot) {
-  console.log(snapshot.value());
+  console.log(Object.values(snapshot.value()));
   //   let booksArray = Object.values(snapshot.val());
   //   clearBooksListEl();
   //   // Challenge: Write a for loop where you console log each book.
