@@ -110,12 +110,9 @@ p {
   align-content: end;
 }
 
-.foot .foot1 {
-  float: left;
-}
-
-.foot .foot2 {
-  float: right;
+.foot {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* #endorse_container {
