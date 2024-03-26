@@ -27,7 +27,6 @@ let to = document.getElementById("name_to");
 let likeBtn = "";
 
 onValue(championsDB, function (snapshot) {
-  console.log(snapshot.val());
   if (snapshot.val() === null) {
     console.log("No entries");
   } else {
@@ -102,6 +101,7 @@ function appendMsgToEndorseListEl(message) {
       console.log(idRef.likes);
 
       console.log(msgVal.likes);
+      msgVal.hitLike = true;
     } else {
       console.log("Already liked");
     }
