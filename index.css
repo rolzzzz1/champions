@@ -3,10 +3,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #1b1924;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   padding-top: 50px;
 }
 
@@ -126,13 +122,3 @@ p {
 .foot2:hover {
   font-size: 115%;
 }
-
-/* #endorse_container {
-  background-color: #ffffff;
-  color: #1b1924;
-  width: 325px;
-  padding: 5px;
-  font-size: 12px;
-  font-family: Inter-Regular;
-  margin-bottom: 8px;
-} */
