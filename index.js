@@ -22,6 +22,7 @@ let endorseContainer = document.getElementById("endorse_container");
 let from = document.getElementById("name_from");
 let to = document.getElementById("name_to");
 let likeBtn = "";
+likeBtn = document.getElementById("like_btn");
 
 onValue(championsDB, function (snapshot) {
   let msgArray = Object.values(snapshot.val());
@@ -79,7 +80,7 @@ function appendMsgToEndorseListEl(message) {
   newEl.innerHTML = msg;
   endorseContainer.prepend(newEl);
 
-  likeBtn = document.getElementById("like_btn");
+  // likeBtn = document.getElementById("like_btn");
   console.log(likeBtn);
 }
 
