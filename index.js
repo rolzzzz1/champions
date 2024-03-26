@@ -27,7 +27,6 @@ let to = document.getElementById("name_to");
 let likeBtn = "";
 
 onValue(championsDB, function (snapshot) {
-  // let msgArray = Object.values(snapshot.val());
   let msgArray = Object.entries(snapshot.val());
 
   clearEndorsementList();
@@ -49,16 +48,13 @@ publishBtn.addEventListener("click", function () {
     to: `${toVal}`,
     msg: `${input}`,
     likes: 0,
+    hitLike: false,
   };
 
   push(championsDB, obj);
 
   clearAllInputs();
 });
-
-// likeBtn.addEventListener("click", function () {
-//   console.log("Increase count");
-// });
 
 function clearEndorsementList() {
   endorseContainer.innerHTML = "";
