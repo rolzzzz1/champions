@@ -29,23 +29,8 @@ onValue(championsDB, function (snapshot) {
 
   for (let i = 0; i < msgArray.length; i++) {
     let currentMsg = msgArray[i];
-    // console.log(currentMsg.to);
-    // console.log(currentMsg.from);
-    // console.log(currentMsg.msg);
-    //   const msg = `
-    //   <p><strong>To ${currentMsg.to}</strong></p>
-    //   ${currentMsg.msg}
-    //   <p><strong>From ${currentMsg.from}</strong><button id="like_btn">🖤 4</button></p>
-    // `;
-
-    //   let newEl = document.createElement("div");
-    //   newEl.setAttribute("id", "show_endorsement");
-    //   newEl.innerHTML = msg;
-    //   endorseContainer.prepend(newEl);
 
     appendMsgToEndorseListEl(currentMsg);
-
-    // appendBookToBooksListEl(currentBook);
   }
 });
 
@@ -53,16 +38,6 @@ publishBtn.addEventListener("click", function () {
   const input = inputEndorsement.value;
   const fromVal = from.value;
   const toVal = to.value;
-  //   const msg = `
-  //   <p><strong>To ${toVal}</strong></p>
-  //   ${input}
-  //   <p><strong>From ${fromVal}</strong></p>
-  // `;
-
-  // let newEl = document.createElement("div");
-  // newEl.setAttribute("id", "show_endorsement");
-  // newEl.innerHTML = msg;
-  // endorseContainer.prepend(newEl);
 
   let obj = {
     from: `${fromVal}`,
@@ -91,7 +66,7 @@ function appendMsgToEndorseListEl(message) {
   const msg = `
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
-      <p><strong>From ${message.from}</strong><button id="like_btn">🖤 4</button></p>
+      <p><strong>From ${message.from}</strong><button id="like_btn"> 🖤 </button>4</p>
     `;
 
   let newEl = document.createElement("div");

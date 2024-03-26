@@ -71,6 +71,11 @@ h3 {
   font-size: 22px;
 }
 
+#like_btn {
+  background-color: none;
+  border: none;
+}
+
 #show_endorsement {
   background-color: #ffffff;
   color: #1b1924;
