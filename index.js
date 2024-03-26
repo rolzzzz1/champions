@@ -44,6 +44,7 @@ publishBtn.addEventListener("click", function () {
     from: `${fromVal}`,
     to: `${toVal}`,
     msg: `${input}`,
+    likes: 0,
   };
 
   push(championsDB, obj);
@@ -71,7 +72,7 @@ function appendMsgToEndorseListEl(message) {
   const msg = `
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
-      <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 4 </button></div>
+      <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 ${message.likes} </button></div>
     `;
 
   let newEl = document.createElement("div");
