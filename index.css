@@ -107,7 +107,7 @@ p {
 }
 
 #end {
-  align-items: end;
+  justify-content: end;
 }
 
 /* #endorse_container {
