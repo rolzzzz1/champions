@@ -117,6 +117,15 @@ p {
   padding-bottom: 10px;
 }
 
+.foot2 {
+  background-color: #ffffff;
+  border: none;
+}
+
+.foot2:hover {
+  font-size: 150%;
+}
+
 /* #endorse_container {
   background-color: #ffffff;
   color: #1b1924;
