@@ -71,6 +71,7 @@ function appendMsgToEndorseListEl(message) {
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
       <p><strong>From ${message.from}</strong>
+      <span id="end"><button id="like_btn"> 🖤 </button>4</span>
       </p>
     `;
   // <button id="like_btn"> 🖤 </button>4

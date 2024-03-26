@@ -106,6 +106,10 @@ p {
   padding-bottom: 10px;
 }
 
+#end {
+  align-items: end;
+}
+
 /* #endorse_container {
   background-color: #ffffff;
   color: #1b1924;
