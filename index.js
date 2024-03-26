@@ -42,7 +42,8 @@ onValue(championsDB, function (snapshot) {
     let newEl = document.createElement("div");
     newEl.setAttribute("id", "show_endorsement");
     newEl.innerHTML = msg;
-    endorseContainer.append(newEl);
+    // endorseContainer.append(newEl);
+    endorseContainer.prepend(newEl);
     // appendBookToBooksListEl(currentBook);
   }
 });
