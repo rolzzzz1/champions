@@ -94,14 +94,14 @@ function appendMsgToEndorseListEl(message) {
 
       let updatedData = {
         likes: count,
+        hitLike: true,
       };
 
       const idRef = ref(database, "champions/" + msgKey);
       update(idRef, updatedData);
-      console.log(idRef.likes);
 
-      console.log(msgVal.likes);
-      msgVal.hitLike = true;
+      // console.log(idRef.likes);
+      // console.log(msgVal.likes);
     } else {
       console.log("Already liked");
     }
