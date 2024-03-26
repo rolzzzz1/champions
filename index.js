@@ -73,6 +73,10 @@ function appendMsgToEndorseListEl(message) {
       <p><strong>From ${message.from}</strong><button id="like_btn"> 🖤 </button>4</p>
     `;
 
+  let newEl = document.createElement("div");
+  newEl.setAttribute("id", "show_endorsement");
+  newEl.innerHTML = msg;
+
   let likeBtn = document.getElementById("like_btn");
   console.log(likeBtn);
 
@@ -80,8 +84,5 @@ function appendMsgToEndorseListEl(message) {
     console.log("like");
   });
 
-  let newEl = document.createElement("div");
-  newEl.setAttribute("id", "show_endorsement");
-  newEl.innerHTML = msg;
   endorseContainer.prepend(newEl);
 }
