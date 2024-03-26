@@ -21,6 +21,7 @@ let inputEndorsement = document.getElementById("input_endorsement");
 let endorseContainer = document.getElementById("endorse_container");
 let from = document.getElementById("name_from");
 let to = document.getElementById("name_to");
+let likeBtn = document.getElementById("like_btn");
 
 onValue(championsDB, function (snapshot) {
   let msgArray = Object.values(snapshot.val());
@@ -48,6 +49,10 @@ publishBtn.addEventListener("click", function () {
   push(championsDB, obj);
 
   clearAllInputs();
+});
+
+likeBtn.addEventListener("click", function () {
+  console.log("Increase count");
 });
 
 function clearEndorsementList() {
