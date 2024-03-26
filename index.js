@@ -50,9 +50,9 @@ publishBtn.addEventListener("click", function () {
   clearAllInputs();
 });
 
-likeBtn.addEventListener("click", function () {
-  console.log("Increase count");
-});
+// likeBtn.addEventListener("click", function () {
+//   console.log("Increase count");
+// });
 
 function clearEndorsementList() {
   endorseContainer.innerHTML = "";
@@ -75,6 +75,10 @@ function appendMsgToEndorseListEl(message) {
 
   let likeBtn = document.getElementById("like_btn");
   console.log(likeBtn);
+
+  likeBtn.addEventListener("click", function () {
+    console.log("like");
+  });
 
   let newEl = document.createElement("div");
   newEl.setAttribute("id", "show_endorsement");
