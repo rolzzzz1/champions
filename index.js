@@ -68,13 +68,18 @@ function clearAllInputs() {
 }
 
 function appendMsgToEndorseListEl(message) {
-  console.log(message);
-  // let locationLikes = ref(database, `champions/${itemID}/likes`);
+  let msgKey = message[0];
+  let msgVal = message[1];
+
+  // console.log(message[1]);
+  let locationLikes = ref(database, `champions/${itemID}/likes`);
+
+  locationLikes.push(message[1].likes + 1);
 
   // const msg = `
-  //     <p><strong>To ${message.to}</strong></p>
-  //     ${message.msg}
-  //     <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 ${message.likes} </button></div>
+  //     <p><strong>To ${message[1].to}</strong></p>
+  //     ${message[1].msg}
+  //     <div class="foot"><strong class="foot1">From ${message[1].from}</strong><button id="like_btn" class="foot2"> 🖤 ${message[1].likes} </button></div>
   //   `;
 
   // let newEl = document.createElement("div");
@@ -86,7 +91,7 @@ function appendMsgToEndorseListEl(message) {
   // console.log(likeBtn);
 
   // likeBtn.addEventListener("click", function () {
-  //   message.likes += 1;
+  //   message[1].likes += 1;
   //   console.log(message.likes);
   // });
 }
