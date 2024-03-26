@@ -24,7 +24,8 @@ let to = document.getElementById("name_to");
 let likeBtn = "";
 
 onValue(championsDB, function (snapshot) {
-  let msgArray = Object.values(snapshot.val());
+  // let msgArray = Object.values(snapshot.val());
+  let msgArray = Object.entries(snapshot.val());
 
   clearEndorsementList();
 
@@ -68,22 +69,24 @@ function clearAllInputs() {
 
 function appendMsgToEndorseListEl(message) {
   console.log(message);
+  // let locationLikes = ref(database, `champions/${itemID}/likes`);
 
-  const msg = `
-      <p><strong>To ${message.to}</strong></p>
-      ${message.msg}
-      <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 ${message.likes} </button></div>
-    `;
+  // const msg = `
+  //     <p><strong>To ${message.to}</strong></p>
+  //     ${message.msg}
+  //     <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 ${message.likes} </button></div>
+  //   `;
 
-  let newEl = document.createElement("div");
-  newEl.setAttribute("id", "show_endorsement");
-  newEl.innerHTML = msg;
-  endorseContainer.prepend(newEl);
+  // let newEl = document.createElement("div");
+  // newEl.setAttribute("id", "show_endorsement");
+  // newEl.innerHTML = msg;
+  // endorseContainer.prepend(newEl);
 
-  likeBtn = document.getElementById("like_btn");
-  console.log(likeBtn);
+  // likeBtn = document.getElementById("like_btn");
+  // console.log(likeBtn);
 
-  likeBtn.addEventListener("click", function () {
-    console.log("Hi");
-  });
+  // likeBtn.addEventListener("click", function () {
+  //   message.likes += 1;
+  //   console.log(message.likes);
+  // });
 }
