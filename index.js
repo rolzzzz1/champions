@@ -1,5 +1,3 @@
-// javascript
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
   getDatabase,
@@ -16,37 +14,7 @@ const appSettings = {
 const app = initializeApp(appSettings);
 // initializeApp method will connect our project to our database on firebase
 const database = getDatabase(app);
-const championsDB = ref(database, "champions"); // reference named movies
-
-// How to push value into database reference
-// push(moviesInDB, inputValue);
-
-onValue(championsDB, function (snapshot) {
-  let msgArray = Object.values(snapshot.val());
-  console.log(msgArray);
-  //   let booksArray = Object.values(snapshot.val());
-  //   clearBooksListEl();
-  endorseContainer.innerHTML = "";
-
-  for (let i = 0; i < msgArray.length; i++) {
-    let currentMsg = msgArray[i];
-    console.log(currentMsg.to);
-    console.log(currentMsg.from);
-    console.log(currentMsg.msg);
-    const msg = `
-    <p><strong>To ${currentMsg.to}</strong></p> 
-    ${currentMsg.msg} 
-    <p><strong>From ${currentMsg.from}</strong><button>🖤 4</button></p>
-  `;
-
-    let newEl = document.createElement("div");
-    newEl.setAttribute("id", "show_endorsement");
-    newEl.innerHTML = msg;
-    // endorseContainer.append(newEl);
-    endorseContainer.prepend(newEl);
-    // appendBookToBooksListEl(currentBook);
-  }
-});
+const championsDB = ref(database, "champions"); // reference named champions
 
 let publishBtn = document.getElementById("publish_btn");
 let inputEndorsement = document.getElementById("input_endorsement");
@@ -54,20 +22,45 @@ let endorseContainer = document.getElementById("endorse_container");
 let from = document.getElementById("name_from");
 let to = document.getElementById("name_to");
 
+onValue(championsDB, function (snapshot) {
+  let msgArray = Object.values(snapshot.val());
+
+  clearEndorsementList();
+
+  for (let i = 0; i < msgArray.length; i++) {
+    let currentMsg = msgArray[i];
+    // console.log(currentMsg.to);
+    // console.log(currentMsg.from);
+    // console.log(currentMsg.msg);
+    const msg = `
+    <p><strong>To ${currentMsg.to}</strong></p> 
+    ${currentMsg.msg} 
+    <p><strong>From ${currentMsg.from}</strong><button id="like_btn">🖤 4</button></p>
+  `;
+
+    let newEl = document.createElement("div");
+    newEl.setAttribute("id", "show_endorsement");
+    newEl.innerHTML = msg;
+    endorseContainer.prepend(newEl);
+
+    // appendBookToBooksListEl(currentBook);
+  }
+});
+
 publishBtn.addEventListener("click", function () {
   const input = inputEndorsement.value;
   const fromVal = from.value;
   const toVal = to.value;
-  const msg = `
-  <p><strong>To ${toVal}</strong></p> 
-  ${input} 
-  <p><strong>From ${fromVal}</strong></p>
-`;
+  //   const msg = `
+  //   <p><strong>To ${toVal}</strong></p>
+  //   ${input}
+  //   <p><strong>From ${fromVal}</strong></p>
+  // `;
 
-  let newEl = document.createElement("div");
-  newEl.setAttribute("id", "show_endorsement");
-  newEl.innerHTML = msg;
-  endorseContainer.append(newEl);
+  // let newEl = document.createElement("div");
+  // newEl.setAttribute("id", "show_endorsement");
+  // newEl.innerHTML = msg;
+  // endorseContainer.prepend(newEl);
 
   let obj = {
     from: `${fromVal}`,
@@ -77,7 +70,17 @@ publishBtn.addEventListener("click", function () {
 
   push(championsDB, obj);
 
+  clearAllInputs();
+});
+
+function clearEndorsementList() {
+  endorseContainer.innerHTML = "";
+}
+
+function clearAllInputs() {
   inputEndorsement.value = "";
   from.value = "";
   to.value = "";
-});
+}
+
+function appendMsgToEndorseListEl(item) {}
