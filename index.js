@@ -70,11 +70,14 @@ function appendMsgToEndorseListEl(message) {
   const msg = `
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
-      <div class="foot"><strong class="foot1">From ${message.from}</strong><button class="foot2"> 🖤 4 </button></div>
+      <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="like_btn" class="foot2"> 🖤 4 </button></div>
     `;
 
   let newEl = document.createElement("div");
   newEl.setAttribute("id", "show_endorsement");
   newEl.innerHTML = msg;
   endorseContainer.prepend(newEl);
+
+  let likeBtn = document.getElementById("like_btn");
+  console.log(likeBtn);
 }
