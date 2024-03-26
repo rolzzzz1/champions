@@ -27,6 +27,7 @@ let to = document.getElementById("name_to");
 let likeBtn = "";
 
 onValue(championsDB, function (snapshot) {
+  console.log(snapshot.val());
   let msgArray = Object.entries(snapshot.val());
 
   clearEndorsementList();
@@ -85,16 +86,20 @@ function appendMsgToEndorseListEl(message) {
   console.log(likeBtn);
 
   likeBtn.addEventListener("click", function () {
-    let count = msgVal.likes + 1;
+    if (!msgVal.hitLike) {
+      let count = msgVal.likes + 1;
 
-    let updatedData = {
-      likes: count,
-    };
+      let updatedData = {
+        likes: count,
+      };
 
-    const idRef = ref(database, "champions/" + msgKey);
-    update(idRef, updatedData);
-    console.log(idRef.likes);
+      const idRef = ref(database, "champions/" + msgKey);
+      update(idRef, updatedData);
+      console.log(idRef.likes);
 
-    console.log(msgVal.likes);
+      console.log(msgVal.likes);
+    } else {
+      console.log("Already liked");
+    }
   });
 }

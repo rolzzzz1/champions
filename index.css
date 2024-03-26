@@ -120,6 +120,7 @@ p {
 .foot2 {
   background-color: #ffffff;
   border: none;
+  font-weight: bold;
 }
 
 .foot2:hover {
