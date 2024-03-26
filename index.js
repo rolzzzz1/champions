@@ -70,7 +70,7 @@ function appendMsgToEndorseListEl(message) {
   const msg = `
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
-      <div class="foot"><strong class="foot1">From ${message.from}</strong><span id="foot2">🖤4</span></div>
+      <div class="foot"><strong class="foot1">From ${message.from}</strong><button id="foot2"> 🖤 </button>4</div>
     `;
 
   let newEl = document.createElement("div");
