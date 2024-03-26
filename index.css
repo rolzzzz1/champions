@@ -60,7 +60,7 @@ h3 {
   border: none;
 }
 
-button {
+#publish_btn {
   margin-top: 10px;
   width: 324px;
   background-color: #28a9f1;
