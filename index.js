@@ -81,3 +81,7 @@ function appendMsgToEndorseListEl(message) {
   let likeBtn = document.getElementById("like_btn");
   console.log(likeBtn);
 }
+
+likeBtn.addEventListener("click", function () {
+  console.log("Hi");
+});
