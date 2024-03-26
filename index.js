@@ -74,21 +74,10 @@ function appendMsgToEndorseListEl(message) {
   let msgKey = message[0];
   let msgVal = message[1];
 
-  console.log(message[0]);
-  console.log(message[1]);
-  // let d = {
-  //   likes: 10,
-  // };
-
-  // const id = ref(database, "champions/" + msgKey);
-  // console.log(id);
-  // update(id, d);
-  // console.log(id.likes);
-
   const msg = `
-      <p><strong>To ${message[1].to}</strong></p>
-      ${message[1].msg}
-      <div class="foot"><strong class="foot1">From ${message[1].from}</strong><button id="like_btn" class="foot2"> 🖤 ${message[1].likes} </button></div>
+      <p><strong>To ${msgVal.to}</strong></p>
+      ${msgVal.msg}
+      <div class="foot"><strong class="foot1">From ${msgVal.from}</strong><button id="like_btn" class="foot2"> 🖤 ${msgVal.likes} </button></div>
     `;
 
   let newEl = document.createElement("div");
@@ -100,7 +89,16 @@ function appendMsgToEndorseListEl(message) {
   console.log(likeBtn);
 
   likeBtn.addEventListener("click", function () {
-    message[1].likes += 1;
-    console.log(message[1].likes);
+    msgVal.likes += 1;
+
+    let updatedData = {
+      likes: 10,
+    };
+
+    const idRef = ref(database, "champions/" + msgKey);
+    update(idRef, updatedData);
+    console.log(idRef.likes);
+
+    console.log(msgVal.likes);
   });
 }
