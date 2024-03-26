@@ -89,10 +89,10 @@ function appendMsgToEndorseListEl(message) {
   console.log(likeBtn);
 
   likeBtn.addEventListener("click", function () {
-    msgVal.likes += 1;
+    let count = msgVal.likes + 1;
 
     let updatedData = {
-      likes: 10,
+      likes: count,
     };
 
     const idRef = ref(database, "champions/" + msgKey);
