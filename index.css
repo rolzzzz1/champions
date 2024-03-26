@@ -110,6 +110,14 @@ p {
   align-content: end;
 }
 
+.foot .foot1 {
+  float: left;
+}
+
+.foot .foot2 {
+  float: right;
+}
+
 /* #endorse_container {
   background-color: #ffffff;
   color: #1b1924;
