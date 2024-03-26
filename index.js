@@ -22,6 +22,7 @@ let endorseContainer = document.getElementById("endorse_container");
 let from = document.getElementById("name_from");
 let to = document.getElementById("name_to");
 let likeBtn = document.getElementById("like_btn");
+console.log(likeBtn);
 
 onValue(championsDB, function (snapshot) {
   let msgArray = Object.values(snapshot.val());
