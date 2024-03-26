@@ -72,15 +72,9 @@ function appendMsgToEndorseListEl(message) {
       ${message.msg}
       <div class="foot"><strong class="foot1">From ${message.from}</strong><span id="foot2">🖤4</span></div>
     `;
-  // <button id="like_btn"> 🖤 </button>4
 
   let newEl = document.createElement("div");
   newEl.setAttribute("id", "show_endorsement");
   newEl.innerHTML = msg;
   endorseContainer.prepend(newEl);
-
-  let btnEl = document.createElement("button");
-  btnEl.setAttribute("id", "like_btn");
-  btnEl.innerHTML = "🖤";
-  newEl.append(btnEl);
 }
