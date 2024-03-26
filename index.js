@@ -4,6 +4,7 @@ import {
   ref,
   push,
   onValue,
+  update,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -79,7 +80,7 @@ function appendMsgToEndorseListEl(message) {
 
   const id = ref(database, "champions/" + msgKey);
   console.log(id);
-  id.update(d);
+  update(id, d);
   console.log(id.likes);
 
   // const msg = `
