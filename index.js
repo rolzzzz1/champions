@@ -70,19 +70,18 @@ function appendMsgToEndorseListEl(message) {
   const msg = `
       <p><strong>To ${message.to}</strong></p>
       ${message.msg}
-      <p><strong>From ${message.from}</strong><button id="like_btn"> 🖤 </button>4</p>
+      <p><strong>From ${message.from}</strong>
+      </p>
     `;
+  // <button id="like_btn"> 🖤 </button>4
 
   let newEl = document.createElement("div");
   newEl.setAttribute("id", "show_endorsement");
   newEl.innerHTML = msg;
-
-  let likeBtn = document.getElementById("like_btn");
-  console.log(likeBtn);
-
-  likeBtn.addEventListener("click", function () {
-    console.log("like");
-  });
-
   endorseContainer.prepend(newEl);
+
+  let btnEl = document.createElement("button");
+  btnEl.setAttribute("id", "like_btn");
+  btnEl.innerHTML = "🖤";
+  newEl.append(btnEl);
 }
