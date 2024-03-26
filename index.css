@@ -85,6 +85,8 @@ h3 {
   font-size: 12px;
   font-family: Inter-Regular;
   margin-bottom: 8px;
+
+  display: flex;
 }
 
 input {
@@ -105,6 +107,7 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 /* #endorse_container {
   background-color: #ffffff;
   color: #1b1924;
