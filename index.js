@@ -32,16 +32,18 @@ onValue(championsDB, function (snapshot) {
     // console.log(currentMsg.to);
     // console.log(currentMsg.from);
     // console.log(currentMsg.msg);
-    const msg = `
-    <p><strong>To ${currentMsg.to}</strong></p> 
-    ${currentMsg.msg} 
-    <p><strong>From ${currentMsg.from}</strong><button id="like_btn">🖤 4</button></p>
-  `;
+    //   const msg = `
+    //   <p><strong>To ${currentMsg.to}</strong></p>
+    //   ${currentMsg.msg}
+    //   <p><strong>From ${currentMsg.from}</strong><button id="like_btn">🖤 4</button></p>
+    // `;
 
-    let newEl = document.createElement("div");
-    newEl.setAttribute("id", "show_endorsement");
-    newEl.innerHTML = msg;
-    endorseContainer.prepend(newEl);
+    //   let newEl = document.createElement("div");
+    //   newEl.setAttribute("id", "show_endorsement");
+    //   newEl.innerHTML = msg;
+    //   endorseContainer.prepend(newEl);
+
+    appendMsgToEndorseListEl(currentMsg);
 
     // appendBookToBooksListEl(currentBook);
   }
@@ -83,4 +85,17 @@ function clearAllInputs() {
   to.value = "";
 }
 
-function appendMsgToEndorseListEl(item) {}
+function appendMsgToEndorseListEl(message) {
+  console.log(message);
+
+  const msg = `
+      <p><strong>To ${message.to}</strong></p>
+      ${message.msg}
+      <p><strong>From ${message.from}</strong><button id="like_btn">🖤 4</button></p>
+    `;
+
+  let newEl = document.createElement("div");
+  newEl.setAttribute("id", "show_endorsement");
+  newEl.innerHTML = msg;
+  endorseContainer.prepend(newEl);
+}
