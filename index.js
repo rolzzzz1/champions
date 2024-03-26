@@ -7,16 +7,18 @@ import {
   update,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
+// My Database
 const appSettings = {
   databaseURL:
     "https://realtime-database-e841a-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
-const app = initializeApp(appSettings);
 // initializeApp method will connect our project to our database on firebase
+const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const championsDB = ref(database, "champions"); // reference named champions
 
+// accessing elements
 let publishBtn = document.getElementById("publish_btn");
 let inputEndorsement = document.getElementById("input_endorsement");
 let endorseContainer = document.getElementById("endorse_container");
@@ -74,31 +76,31 @@ function appendMsgToEndorseListEl(message) {
 
   console.log(message[0]);
   console.log(message[1]);
-  let d = {
-    likes: 10,
-  };
+  // let d = {
+  //   likes: 10,
+  // };
 
-  const id = ref(database, "champions/" + msgKey);
-  console.log(id);
-  update(id, d);
-  console.log(id.likes);
+  // const id = ref(database, "champions/" + msgKey);
+  // console.log(id);
+  // update(id, d);
+  // console.log(id.likes);
 
-  // const msg = `
-  //     <p><strong>To ${message[1].to}</strong></p>
-  //     ${message[1].msg}
-  //     <div class="foot"><strong class="foot1">From ${message[1].from}</strong><button id="like_btn" class="foot2"> 🖤 ${message[1].likes} </button></div>
-  //   `;
+  const msg = `
+      <p><strong>To ${message[1].to}</strong></p>
+      ${message[1].msg}
+      <div class="foot"><strong class="foot1">From ${message[1].from}</strong><button id="like_btn" class="foot2"> 🖤 ${message[1].likes} </button></div>
+    `;
 
-  // let newEl = document.createElement("div");
-  // newEl.setAttribute("id", "show_endorsement");
-  // newEl.innerHTML = msg;
-  // endorseContainer.prepend(newEl);
+  let newEl = document.createElement("div");
+  newEl.setAttribute("id", "show_endorsement");
+  newEl.innerHTML = msg;
+  endorseContainer.prepend(newEl);
 
-  // likeBtn = document.getElementById("like_btn");
-  // console.log(likeBtn);
+  likeBtn = document.getElementById("like_btn");
+  console.log(likeBtn);
 
-  // likeBtn.addEventListener("click", function () {
-  //   message[1].likes += 1;
-  //   console.log(message.likes);
-  // });
+  likeBtn.addEventListener("click", function () {
+    message[1].likes += 1;
+    console.log(message.likes);
+  });
 }
