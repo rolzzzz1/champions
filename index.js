@@ -72,7 +72,7 @@ function appendMsgToEndorseListEl(message) {
   let msgVal = message[1];
 
   // console.log(message[1]);
-  let locationLikes = ref(database, `champions/${itemID}/likes`);
+  let locationLikes = ref(database, `champions/${msgKey}/likes`);
 
   locationLikes.push(message[1].likes + 1);
 
