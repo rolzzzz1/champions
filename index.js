@@ -28,14 +28,18 @@ let likeBtn = "";
 
 onValue(championsDB, function (snapshot) {
   console.log(snapshot.val());
-  let msgArray = Object.entries(snapshot.val());
+  if (snapshot.val() === null) {
+    console.log("No entries");
+  } else {
+    let msgArray = Object.entries(snapshot.val());
 
-  clearEndorsementList();
+    clearEndorsementList();
 
-  for (let i = 0; i < msgArray.length; i++) {
-    let currentMsg = msgArray[i];
+    for (let i = 0; i < msgArray.length; i++) {
+      let currentMsg = msgArray[i];
 
-    appendMsgToEndorseListEl(currentMsg);
+      appendMsgToEndorseListEl(currentMsg);
+    }
   }
 });
 
