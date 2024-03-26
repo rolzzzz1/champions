@@ -101,6 +101,6 @@ function appendMsgToEndorseListEl(message) {
 
   likeBtn.addEventListener("click", function () {
     message[1].likes += 1;
-    console.log(message.likes);
+    console.log(message[1].likes);
   });
 }
