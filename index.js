@@ -76,7 +76,7 @@ function appendMsgToEndorseListEl(message) {
 
   locationLikes.update({ likes: 1 });
 
-  database.ref(`champions/${msgKey}`).update({
+  database.ref(`champions`).child(`${msgKey}`).update({
     likes: 1,
   });
 
